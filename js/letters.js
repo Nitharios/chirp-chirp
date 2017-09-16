@@ -20,7 +20,7 @@ function countLetters(counter, sample_text){
   // if letter in sample_text is a key in counter, increment value of counter[letter]
   //debugger;
   if (!sample_text.length) return counter;
-  
+  //. var letter = sample_text[0].toLowerCase();
   if (counter.hasOwnProperty(sample_text[0].toLowerCase())) {
     counter[sample_text[0].toLowerCase()]++;
   }
