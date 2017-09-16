@@ -13,11 +13,28 @@ var counter = {
   "q" : 0,  "r" : 0,  "s" : 0,  "t" : 0,
   "u" : 0,  "v" : 0,  "w" : 0,  "x" : 0,
   "y" : 0,  "z" : 0
-}
+};
 
 function countLetters(counter, sample_text){
   // FIX ME
+  // if letter in sample_text is a key in counter, increment value of counter[letter]
+  //debugger;
+  if (!sample_text.length) return counter;
+  
+  if (counter.hasOwnProperty(sample_text[0].toLowerCase())) {
+    counter[sample_text[0].toLowerCase()]++;
+  }
+
+  return countLetters(counter, sample_text.slice(1));
 }
+
+//   if (!sample_text.length) return counter;
+
+//   if (counter.hasOwnProperty(sample_text[0].toLowerCase())) {
+//     counter[sample_text[0].toLowerCase()]++;
+//   }
+//   return countLetters(counter, sample_text.slice(1))
+// }
 
 $(document).ready(function(){
   countLetters(counter, sample_text);
